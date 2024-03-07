@@ -1,0 +1,146 @@
+<!DOCTYPE html> <html><head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Workbench">
+        <title>What Fruit Am I?</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&amp;display=swap" rel="stylesheet">
+    <style>body {
+    font-family: 'Times New Roman', sans-serif;
+    background-color: aqua;
+    text-align: center;
+    background-image: url("https://img.freepik.com/premium-vector/vector-seamless-pattern-question-marks-quiz-background_574806-1036.jpg");
+}
+
+img {
+    width: 400px;
+}
+
+h1 {
+    font-size: 45px;
+    color: black;
+    font-family: "Workbench";
+    font-weight: 800;
+}
+
+h4 {
+    font-size: 45px;
+    color: black;
+    font-family: "Workbench";
+    font-weight: 800;
+
+}
+
+.tittle {
+    font-size: 50px;
+    font-weight: 800;
+    color: black;
+    font-family: "Workbench";
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+     padding: 15px;
+    width: 400px;
+}
+
+p:hover,
+h1:hover,
+a:hover,
+h4:hover {
+    background-color: White;
+}
+
+.title {
+    text-align: center;
+}
+
+.counter {
+    color: black;
+}
+
+.results {
+    margin: 10px;
+    padding: 10px;
+    border: 5px aqua;
+    display: none;
+    text-align: center;
+}
+
+button {
+
+    background-color: white;
+    color: Black;
+    font-family: "Workbench";
+    
+}
+.result {
+    color: black;
+        font-family: "Workbench";
+}
+.counter {
+    font-family: "Workbench";
+    text-align: center;
+    color: black;
+     padding: 10px;
+}
+</style></head>
+    <body>
+        <div class="title">
+            <h1>What Fruit Am I?</h1>
+        </div>
+        <div class="questions">
+            <h4>How Old Are You?</h4>
+
+            <img src="https://img.buzzfeed.com/buzzfeed-static/static/2020-08/5/15/tmp/da882ea67e66/tmp-name-2-4069-1596640479-0_dblbig.jpg?resize=1200:*" alt="A row of bananas, apples, and kiwi.">
+            <input class="age" placeholder="Enter a number">
+
+
+            <h4>Do You Perfer Sweet Or Sour?</h4>
+
+            <img src="https://media.proprofs.com/images/QM/user_images/2503852/New%20Project%20(66)(252).jpg" alt=" A variety of fruits, such as strawberries, bananas, oranges. ">
+
+            <input class="taste" placeholder="sweet or sour?">
+            <button onclick="play()" class="button">Click To Find Out!</button>
+            <audio class="audio" src="https://cdn.glitch.global/ceecf224-61c4-4403-bbb2-e473bab5039d/valve.mp3"></audio>
+
+            <div class="counter">This quiz has been taken 0 times</div>
+            
+        </div>
+        <div class="result">
+            <div class="counter"></div>
+            
+        </div>
+
+
+
+    
+<script>
+/*__POPCODESTART__*/
+var tasteButton = document.querySelector(".taste-button");
+var button = document.querySelector("button");
+var ageNumber = document.querySelector("age");
+var result = document.querySelector(".result");
+var title = document.querySelector(".title");
+var counterdiv = document.querySelector(".counter"); //
+
+var counter = 0;
+
+button.onclick = function () {
+  var taste = document.querySelector(".taste").value;
+  var number = document.querySelector(".age").value;
+  counter = counter + 1;
+
+  if (number < 50 && taste === "sweet") {
+    result.innerHTML = "<img src=https://static.toiimg.com/photo/84642323.cms> <br><em>You are a mango!</em>";
+  } else if (number > 50 && taste === "sweet") {
+    result.innerHTML = "<img src=https://foodal.com/wp-content/uploads/2015/03/Make-Strawberry-Season-Last-All-Year.jpg> <br> <em> You are a Strawberry!</em>";
+  } else if (number < 50 && taste === "sour") {
+    result.innerHTML = "<img src=https://boydhampers.com/cdn/shop/articles/whole-and-sliced-lemons.jpg?v=1694357456&width=1100 <br> <em> You are a Lemon! </em>";
+  } else if (number > 50 && taste === "sour") {
+    result.innerHTML = "<img src=https://assets.idahopreferred.com/uploads/2023/08/23130201/Cherries-scaled-1.jpg <br> <em> You are a Cherry </em>";
+  }
+
+  alert("Ready for your results?");
+  counterdiv.innerHTML = "This quiz has been taken " + counter + " times ";
+}; //
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbInRhc3RlQnV0dG9uIiwiZG9jdW1lbnQiLCJxdWVyeVNlbGVjdG9yIiwiYnV0dG9uIiwiYWdlTnVtYmVyIiwicmVzdWx0IiwidGl0bGUiLCJjb3VudGVyZGl2IiwiY291bnRlciIsIm9uY2xpY2siLCJ0YXN0ZSIsInZhbHVlIiwibnVtYmVyIiwiaW5uZXJIVE1MIiwiYWxlcnQiXSwibWFwcGluZ3MiOiJBQUFBLElBQUlBLFdBQVcsR0FBR0MsUUFBUSxDQUFDQyxhQUFULENBQXVCLGVBQXZCLENBQWxCO0FBQ0EsSUFBSUMsTUFBTSxHQUFHRixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsUUFBdkIsQ0FBYjtBQUNBLElBQUlFLFNBQVMsR0FBR0gsUUFBUSxDQUFDQyxhQUFULENBQXVCLEtBQXZCLENBQWhCO0FBQ0EsSUFBSUcsTUFBTSxHQUFHSixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsU0FBdkIsQ0FBYjtBQUNBLElBQUlJLEtBQUssR0FBR0wsUUFBUSxDQUFDQyxhQUFULENBQXVCLFFBQXZCLENBQVo7QUFDQSxJQUFJSyxVQUFVLEdBQUdOLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixVQUF2QixDQUFqQixDLENBQ0E7O0FBQ0MsSUFBSU0sT0FBTyxHQUFHLENBQWQ7O0FBQ0RMLE1BQU0sQ0FBQ00sT0FBUCxHQUFpQixZQUFXO0FBQ3hCLE1BQUlDLEtBQUssR0FBR1QsUUFBUSxDQUFDQyxhQUFULENBQXVCLFFBQXZCLEVBQWlDUyxLQUE3QztBQUNBLE1BQUlDLE1BQU0sR0FBR1gsUUFBUSxDQUFDQyxhQUFULENBQXVCLE1BQXZCLEVBQStCUyxLQUE1QztBQUNKSCxFQUFBQSxPQUFPLEdBQUdBLE9BQU8sR0FBRyxDQUFwQjs7QUFDSSxNQUFJSSxNQUFNLEdBQUcsRUFBVCxJQUFlRixLQUFLLEtBQUssT0FBN0IsRUFBc0M7QUFDekNMLElBQUFBLE1BQU0sQ0FBQ1EsU0FBUCxHQUFtQixzRkFBbkI7QUFDSSxHQUZELE1BRU8sSUFBSUQsTUFBTSxHQUFHLEVBQVQsSUFBZUYsS0FBSyxLQUFLLE9BQTdCLEVBQXNDO0FBQ3pDTCxJQUFBQSxNQUFNLENBQUNRLFNBQVAsR0FBbUIsdUlBQW5CO0FBQ0gsR0FGTSxNQUVBLElBQUlELE1BQU0sR0FBRyxFQUFULElBQWVGLEtBQUssS0FBSyxNQUE3QixFQUFxQztBQUN4Q0wsSUFBQUEsTUFBTSxDQUFDUSxTQUFQLEdBQW1CLHlJQUFuQjtBQUNILEdBRk0sTUFFQSxJQUFJRCxNQUFNLEdBQUcsRUFBVCxJQUFlRixLQUFLLEtBQUssTUFBN0IsRUFBcUM7QUFDeENMLElBQUFBLE1BQU0sQ0FBQ1EsU0FBUCxHQUFtQiw0SEFBbkI7QUFDSDs7QUFDQUMsRUFBQUEsS0FBSyxDQUFDLHlCQUFELENBQUw7QUFDRFAsRUFBQUEsVUFBVSxDQUFDTSxTQUFYLEdBQXdCLDhCQUE4QkwsT0FBOUIsR0FBd0MsU0FBaEU7QUFDSCxDQWZELEMsQ0FnQkEiLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgdGFzdGVCdXR0b24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnRhc3RlLWJ1dHRvblwiKTtcbmxldCBidXR0b24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiYnV0dG9uXCIpO1xubGV0IGFnZU51bWJlciA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCJhZ2VcIik7XG5sZXQgcmVzdWx0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXN1bHRcIik7XG5sZXQgdGl0bGUgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnRpdGxlXCIpO1xubGV0IGNvdW50ZXJkaXYgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmNvdW50ZXJcIik7XG4vL1xuIGxldCBjb3VudGVyID0gMDtcbmJ1dHRvbi5vbmNsaWNrID0gZnVuY3Rpb24oKSB7XG4gICAgbGV0IHRhc3RlID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi50YXN0ZVwiKS52YWx1ZTtcbiAgICBsZXQgbnVtYmVyID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5hZ2VcIikudmFsdWU7XG5jb3VudGVyID0gY291bnRlciArIDE7ICAgIFxuICAgIGlmIChudW1iZXIgPCA1MCAmJiB0YXN0ZSA9PT0gXCJzd2VldFwiKSB7XG4gcmVzdWx0LmlubmVySFRNTCA9IFwiPGltZyBzcmM9aHR0cHM6Ly9zdGF0aWMudG9paW1nLmNvbS9waG90by84NDY0MjMyMy5jbXM+IDxicj48ZW0+WW91IGFyZSBhIG1hbmdvITwvZW0+XCI7XG4gICAgfSBlbHNlIGlmIChudW1iZXIgPiA1MCAmJiB0YXN0ZSA9PT0gXCJzd2VldFwiKSB7XG4gICAgICAgIHJlc3VsdC5pbm5lckhUTUwgPSBcIjxpbWcgc3JjPWh0dHBzOi8vZm9vZGFsLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAxNS8wMy9NYWtlLVN0cmF3YmVycnktU2Vhc29uLUxhc3QtQWxsLVllYXIuanBnPiA8YnI+IDxlbT4gWW91IGFyZSBhIFN0cmF3YmVycnkhPC9lbT5cIjsgXG4gICAgfSBlbHNlIGlmIChudW1iZXIgPCA1MCAmJiB0YXN0ZSA9PT0gXCJzb3VyXCIpIHtcbiAgICAgICAgcmVzdWx0LmlubmVySFRNTCA9IFwiPGltZyBzcmM9aHR0cHM6Ly9ib3lkaGFtcGVycy5jb20vY2RuL3Nob3AvYXJ0aWNsZXMvd2hvbGUtYW5kLXNsaWNlZC1sZW1vbnMuanBnP3Y9MTY5NDM1NzQ1NiZ3aWR0aD0xMTAwIDxicj4gPGVtPiBZb3UgYXJlIGEgTGVtb24hIDwvZW0+XCI7XG4gICAgfSBlbHNlIGlmIChudW1iZXIgPiA1MCAmJiB0YXN0ZSA9PT0gXCJzb3VyXCIpIHsgXG4gICAgICAgIHJlc3VsdC5pbm5lckhUTUwgPSBcIjxpbWcgc3JjPWh0dHBzOi8vYXNzZXRzLmlkYWhvcHJlZmVycmVkLmNvbS91cGxvYWRzLzIwMjMvMDgvMjMxMzAyMDEvQ2hlcnJpZXMtc2NhbGVkLTEuanBnIDxicj4gPGVtPiBZb3UgYXJlIGEgQ2hlcnJ5IDwvZW0+XCI7XG4gICAgfVxuICAgICBhbGVydChcIlJlYWR5IGZvciB5b3VyIHJlc3VsdHM/XCIpO1xuICAgIGNvdW50ZXJkaXYuaW5uZXJIVE1MID0gKFwiVGhpcyBxdWl6IGhhcyBiZWVuIHRha2VuIFwiICsgY291bnRlciArIFwiIHRpbWVzIFwiKTtcbn07XG4vL1xuIl19</script></body></html>
