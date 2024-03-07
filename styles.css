@@ -1,0 +1,81 @@
+body {
+    font-family: 'Times New Roman', sans-serif;
+    background-color: aqua;
+    text-align: center;
+    background-image: url("https://img.freepik.com/premium-vector/vector-seamless-pattern-question-marks-quiz-background_574806-1036.jpg");
+}
+
+img {
+    width: 400px;
+}
+
+h1 {
+    font-size: 45px;
+    color: black;
+    font-family: "Workbench";
+    font-weight: 800;
+}
+
+h4 {
+    font-size: 45px;
+    color: black;
+    font-family: "Workbench";
+    font-weight: 800;
+
+}
+
+.tittle {
+    font-size: 50px;
+    font-weight: 800;
+    color: black;
+    font-family: "Workbench";
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+     padding: 15px;
+    width: 400px;
+}
+
+p:hover,
+h1:hover,
+a:hover,
+h4:hover {
+    background-color: White;
+}
+
+.title {
+    text-align: center;
+}
+
+.counter {
+    color: black;
+}
+
+.results {
+    margin: 10px;
+    padding: 10px;
+    border: 5px aqua;
+    display: none;
+    text-align: center;
+}
+
+button {
+
+    background-color: white;
+    color: Black;
+    font-family: "Workbench";
+    
+}
+.result {
+    color: black;
+        font-family: "Workbench";
+}
+.counter {
+    font-family: "Workbench";
+    text-align: center;
+    color: black;
+     padding: 10px;
+}
